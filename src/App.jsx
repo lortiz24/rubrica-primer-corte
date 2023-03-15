@@ -29,7 +29,10 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        
+        <Modal isOpen={modalIsOpen}>
+          
+          <button onClick={() => setModalIsOpen(false)}>Cerrar</button>
+        </Modal>
         <form onSubmit={handleSubmit}>
           <label htmlFor="nombre" style={{ margin: 10 }}>Nombre del estudiante</label>
           <input name='nombre' type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
