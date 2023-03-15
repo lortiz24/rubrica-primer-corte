@@ -30,7 +30,12 @@ function App() {
     <div className="App">
       <div className='container'>
         <Modal isOpen={modalIsOpen}>
-          
+          <h2>Datos ingresados:</h2>
+          <p>Nombre: {nombre}</p>
+          <p>Semestre: {semestre}</p>
+          <p>Deporte favorito: {deporteFavorito}</p>
+          <p>Equipo: {equiposDeporte}</p>
+          <p>Jugadores estelares: {jugadoresEstelares}</p>
           <button onClick={() => setModalIsOpen(false)}>Cerrar</button>
         </Modal>
         <form onSubmit={handleSubmit}>
