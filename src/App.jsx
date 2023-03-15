@@ -45,7 +45,11 @@ function App() {
           <label htmlFor="descripcionEquipo" style={{ margin: 10 }}>Descripción del equipo de {deporteFavorito}</label>
           <input name='descripcionEquipo' type="text" value={descripcionEquipo} onChange={(e) => setDescripcionEquipo(e.target.value)} required />
 
+          <label htmlFor="jugadoresEstelares" style={{ margin: 10 }}>Jugadores estelares de {equiposDeporte}</label>
+          <input name='jugadoresEstelares' type="text" value={jugadoresEstelares} onChange={(e) => setJugadoresEstelares(e.target.value)} required />
+
         
+
         </form>
       </div>
     </div>
