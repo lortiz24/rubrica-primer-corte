@@ -8,7 +8,14 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h4> LUIS JAVIER ORTIZ FRANCO</h4>
+        <form >
+          <label htmlFor="nombre" style={{margin:10}}>Nombre del estudiante</label>
+          <input name='nombre' type="text" value={'Luis'} disabled/>
+
+          <label htmlFor="semestre" style={{margin:10}}>Semestre del estuidiante</label>
+          <input name='semestre' type="text" value={'Luis'} disabled/>
+
+        </form>
       </div>
     </div>
   )
