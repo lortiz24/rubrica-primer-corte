@@ -4,7 +4,7 @@ function App() {
   const [nombre, setNombre] = useState('');
   const [semestre, setSemestre] = useState('');
   const [deporteFavorito, setDeporteFavorito] = useState('');
-  
+
 
   const deportes = [
     'Fútbol',
@@ -21,23 +21,26 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="nombre" style={{margin:10}}>Nombre del estudiante</label>
-        <input name='nombre' type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required/>
+      <div className='container'>
 
-        <label htmlFor="semestre" style={{margin:10}}>Semestre del estudiante</label>
-        <input name='semestre' type="text" value={semestre} onChange={(e) => setSemestre(e.target.value)} required/>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="nombre" style={{ margin: 10 }}>Nombre del estudiante</label>
+          <input name='nombre' type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
 
-        <label htmlFor="deporteFavorito" style={{margin:10}}>Deporte favorito</label>
-        <select name='deporteFavorito' value={deporteFavorito} onChange={(e) => setDeporteFavorito(e.target.value)} required>
-          <option value="">Seleccione un deporte</option>
-          {deportes.map((deporte, index) => (
-            <option key={index} value={deporte}>{deporte}</option>
-          ))}
-        </select>
+          <label htmlFor="semestre" style={{ margin: 10 }}>Semestre del estudiante</label>
+          <input name='semestre' type="text" value={semestre} onChange={(e) => setSemestre(e.target.value)} required />
 
-        
-      </form>
+          <label htmlFor="deporteFavorito" style={{ margin: 10 }}>Deporte favorito</label>
+          <select name='deporteFavorito' value={deporteFavorito} onChange={(e) => setDeporteFavorito(e.target.value)} required>
+            <option value="">Seleccione un deporte</option>
+            {deportes.map((deporte, index) => (
+              <option key={index} value={deporte}>{deporte}</option>
+            ))}
+          </select>
+
+
+        </form>
+      </div>
     </div>
   );
 }
