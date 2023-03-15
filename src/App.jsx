@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
+import ModalQuestion from './components/Modal';
 import { deportes } from './utils/DB';
-
+import './App.css'
 function App() {
   const [nombre, setNombre] = useState('');
   const [semestre, setSemestre] = useState('');
@@ -14,8 +14,6 @@ function App() {
     setModalIsOpen(true);
   };
 
- 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     // aquí se podría enviar la información a una API o hacer algo con ella
@@ -24,15 +22,7 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-        <Modal isOpen={modalIsOpen}>
-          <h2>Datos ingresados:</h2>
-          <p>Nombre: {nombre}</p>
-          <p>Semestre: {semestre}</p>
-          <p>Deporte favorito: {deporteFavorito}</p>
-          <p>Equipo: {equiposDeporte}</p>
-          <p>Jugadores estelares: {jugadoresEstelares}</p>
-          <button onClick={() => setModalIsOpen(false)}>Cerrar</button>
-        </Modal>
+        <ModalQuestion deporteFavorito={deporteFavorito} equiposDeporte={equiposDeporte} jugadoresEstelares={jugadoresEstelares} modalIsOpen={modalIsOpen} nombre={nombre} semestre={semestre} setModalIsOpen={setModalIsOpen} />
         <form onSubmit={handleSubmit}>
           <label htmlFor="nombre" style={{ margin: 10 }}>Nombre del estudiante</label>
           <input name='nombre' type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
