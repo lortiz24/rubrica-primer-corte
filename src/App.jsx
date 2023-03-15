@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -7,6 +8,10 @@ function App() {
   const [equiposDeporte, setEquiposDeporte] = useState([]);
   const [descripcionEquipo, setDescripcionEquipo] = useState('');
   const [jugadoresEstelares, setJugadoresEstelares] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
 
   const deportes = [
     'Fútbol',
@@ -24,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-
+        
         <form onSubmit={handleSubmit}>
           <label htmlFor="nombre" style={{ margin: 10 }}>Nombre del estudiante</label>
           <input name='nombre' type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
@@ -48,7 +53,7 @@ function App() {
           <label htmlFor="jugadoresEstelares" style={{ margin: 10 }}>Jugadores estelares de {equiposDeporte}</label>
           <input name='jugadoresEstelares' type="text" value={jugadoresEstelares} onChange={(e) => setJugadoresEstelares(e.target.value)} required />
 
-          <button type='submit'>Enviar</button>
+          <button onClick={openModal}>Enviar</button>
 
         </form>
       </div>
