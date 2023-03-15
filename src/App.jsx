@@ -15,6 +15,11 @@ function App() {
           <label htmlFor="semestre" style={{margin:10}}>Semestre del estuidiante</label>
           <input name='semestre' type="text" value={'Luis'} disabled/>
 
+
+          <label htmlFor="nombre" style={{margin:10}}>Deporte favorito</label>
+          <input name='nombre' type="text" value={'Luis'} disabled/>
+
+          
         </form>
       </div>
     </div>
