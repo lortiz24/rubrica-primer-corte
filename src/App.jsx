@@ -4,7 +4,9 @@ function App() {
   const [nombre, setNombre] = useState('');
   const [semestre, setSemestre] = useState('');
   const [deporteFavorito, setDeporteFavorito] = useState('');
-
+  const [equiposDeporte, setEquiposDeporte] = useState([]);
+  const [descripcionEquipo, setDescripcionEquipo] = useState('');
+  const [jugadoresEstelares, setJugadoresEstelares] = useState([]);
 
   const deportes = [
     'Fútbol',
@@ -37,7 +39,10 @@ function App() {
               <option key={index} value={deporte}>{deporte}</option>
             ))}
           </select>
+          <label htmlFor="equiposDeporte" style={{ margin: 10 }}>Equipos de {deporteFavorito}</label>
+          <input name='equiposDeporte' type="text" value={equiposDeporte} onChange={(e) => setEquiposDeporte(e.target.value)} required />
 
+          
 
         </form>
       </div>
