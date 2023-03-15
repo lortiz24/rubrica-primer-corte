@@ -48,7 +48,7 @@ function App() {
           <label htmlFor="jugadoresEstelares" style={{ margin: 10 }}>Jugadores estelares de {equiposDeporte}</label>
           <input name='jugadoresEstelares' type="text" value={jugadoresEstelares} onChange={(e) => setJugadoresEstelares(e.target.value)} required />
 
-        
+          <button type='submit'>Enviar</button>
 
         </form>
       </div>
