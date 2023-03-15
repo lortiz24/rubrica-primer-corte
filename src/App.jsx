@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { deportes } from './utils/DB';
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -13,13 +14,7 @@ function App() {
     setModalIsOpen(true);
   };
 
-  const deportes = [
-    'Fútbol',
-    'Baloncesto',
-    'Tenis',
-    'Voleibol',
-    'Natación'
-  ];
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
